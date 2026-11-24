@@ -5,41 +5,45 @@
 class Jmp < Formula
   desc "Smart directory jumper — Go rewrite and enhancement of autojump (frecency ranking, TUI, aliases, multi-device sync)"
   homepage "https://github.com/biyan113/jmp"
-  version "0.2.1"
+  version "0.3.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/biyan113/jmp/releases/download/v0.2.1/jmp_0.2.1_Darwin_amd64.tar.gz"
-      sha256 "e49dab7ee9ed160178e8322cf1dab5c049f47c6c61a33ee7545e8a51f4b13bcb"
+      url "https://github.com/biyan113/jmp/releases/download/v0.3.0/jmp_0.3.0_Darwin_amd64.tar.gz"
+      sha256 "9b7ccf7d78d31a5a590903aab9b1d26f8fa7268122390f1bf89b949b5f857e84"
 
       define_method(:install) do
         bin.install "jmp"
+        man1.install Dir["man/*.1"]
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/biyan113/jmp/releases/download/v0.2.1/jmp_0.2.1_Darwin_arm64.tar.gz"
-      sha256 "fdca1c94ef7c29ae7fa43df94515b3d69c338f3d4055eb9a9e3a9b3c94de92b1"
+      url "https://github.com/biyan113/jmp/releases/download/v0.3.0/jmp_0.3.0_Darwin_arm64.tar.gz"
+      sha256 "685b0d11617c161151911b126783fafd15cc669f8c1390ba245cf39126544681"
 
       define_method(:install) do
         bin.install "jmp"
+        man1.install Dir["man/*.1"]
       end
     end
   end
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/biyan113/jmp/releases/download/v0.2.1/jmp_0.2.1_Linux_amd64.tar.gz"
-      sha256 "4a9cb66678883a4cc3c1c96bee439fb476563965b5ade09cb65885ede1439b2d"
+      url "https://github.com/biyan113/jmp/releases/download/v0.3.0/jmp_0.3.0_Linux_amd64.tar.gz"
+      sha256 "6cfd483b59d01292394a0d579d9dd14ad1cbcb8c983a2b4acb8c717953ef1596"
       define_method(:install) do
         bin.install "jmp"
+        man1.install Dir["man/*.1"]
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/biyan113/jmp/releases/download/v0.2.1/jmp_0.2.1_Linux_arm64.tar.gz"
-      sha256 "a4aae3bdff61e22a92b9853794b12b658b796a0c304df586ee162880031bbc01"
+      url "https://github.com/biyan113/jmp/releases/download/v0.3.0/jmp_0.3.0_Linux_arm64.tar.gz"
+      sha256 "55e450247fd152f25ad233977d72c7ed100ebd37a0953fa438296340b1083272"
       define_method(:install) do
         bin.install "jmp"
+        man1.install Dir["man/*.1"]
       end
     end
   end
